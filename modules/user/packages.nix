@@ -8,5 +8,11 @@
     jq
     fzf
     fastfetch # Opcional: pra mostrar infos do sistema bonitinho
+    # Kubernetes e Cloud
+    kubectl
+    kubectx # Isso instala o 'kubectx' E o 'kubens'
+    
+    # Ferramentas
+    hugo
   ];
 }

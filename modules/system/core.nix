@@ -7,11 +7,21 @@
 
   # HABILITANDO FLAKES
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+
   # Rede
   networking.hostName = "nixos"; 
   networking.networkmanager.enable = true;
   services.rpcbind.enable = true; # Para NFS
+
+  # 1. Habilitar ZSH no sistema (obrigatório para ser shell padrão)
+  programs.zsh.enable = true;
+  users.users.matheus.shell = pkgs.zsh;
+
+  # 2. Instalar Fontes para o Powerlevel10k
+  fonts.packages = with pkgs; [
+    nerd-fonts.meslo-lg
+    nerd-fonts.jetbrains-mono
+  ];
 
   # Timezone e Locale
   time.timeZone = "America/Sao_Paulo";
