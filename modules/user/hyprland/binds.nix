@@ -7,6 +7,7 @@
     bind = [
       # --- Ações Básicas ---
       "$mod, Q, killactive,"
+      "$mod, W, exec, google-chrome-stable"
       "$mod, M, exit,"
       "$mod, V, togglefloating,"
       "$mod, F, fullscreen,"
@@ -16,6 +17,9 @@
       
       # Quake Terminal (Drop down)
       "$mod, RETURN, togglespecialworkspace, magicterm"
+      
+      # Ajuda / Keybinds
+      "$mod, I, exec, show-keybinds"
 
       # --- Foco de Janela (Setas) ---
       "$mod, left, movefocus, l"

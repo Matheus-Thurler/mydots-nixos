@@ -7,6 +7,8 @@
     ./execs.nix
     ./binds.nix
     ./windowrules.nix
+    ./packages.nix
+    ./scripts.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -36,5 +38,12 @@
         preserve_split = true;
       };
     };
+  };
+
+  # Portals (Obrigatório para OBS e Screenshare)
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
+    config.common.default = [ "hyprland" ];
   };
 }

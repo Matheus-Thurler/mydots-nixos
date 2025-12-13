@@ -17,16 +17,5 @@
     python3
     terraform
     go
-
-    # GUI Utils
-    rofi
-    xfce.thunar
-    adwaita-icon-theme
-
-    # Hyprland Essentials
-    waybar
-    dunst
-    swww
-    networkmanagerapplet
   ];
 }
