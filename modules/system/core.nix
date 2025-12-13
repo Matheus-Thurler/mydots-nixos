@@ -5,6 +5,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # HABILITANDO FLAKES
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
   # Rede
   networking.hostName = "nixos"; 
   networking.networkmanager.enable = true;
