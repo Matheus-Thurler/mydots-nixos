@@ -17,10 +17,21 @@
   programs.zsh.enable = true;
   users.users.matheus.shell = pkgs.zsh;
 
-  # 2. Instalar Fontes para o Powerlevel10k
+  # 2. Instalar Fontes para o Powerlevel10k e Ícones
   fonts.packages = with pkgs; [
+    # Nerd Fonts
     nerd-fonts.meslo-lg
     nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
+    nerd-fonts.hack
+    nerd-fonts.droid-sans-mono
+    nerd-fonts.symbols-only
+
+    # Ícones e Emojis
+    font-awesome
+    noto-fonts-color-emoji
+    noto-fonts-cjk-sans
+    material-design-icons
   ];
 
   # Timezone e Locale
