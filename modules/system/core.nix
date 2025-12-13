@@ -47,4 +47,23 @@
   
   # Permitir software proprietário
   nixpkgs.config.allowUnfree = true;
+
+  # 1. Configuração do Garbage Collector (Limpeza de Disco)
+  nix.gc = {
+    automatic = true;
+    dates = "weekly"; # Executa semanalmente. Pode ser "daily", "03:15", etc.
+    # Remove gerações anteriores que são mais antigas que 7 dias
+    options = "--delete-older-than 7d"; 
+  };
+
+  # 2. Otimização Automática (Opcional, mas recomendado)
+  # Isso ajuda a economizar espaço deduplicando arquivos idênticos no /nix/store
+  nix.settings.auto-optimise-store = true;
+
+  # 3. Limitar Backups no Menu de Boot
+  # Isso garante que seu menu de boot não fique cheio de opções antigas.
+  # Escolha APENAS UMA das opções abaixo, dependendo se usa systemd-boot ou GRUB:
+
+  # Opção A: Se você usa systemd-boot (Padrão em instalações UEFI modernas)
+  boot.loader.systemd-boot.configurationLimit = 3;
 }

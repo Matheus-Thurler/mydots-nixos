@@ -16,7 +16,7 @@
   users.users.matheus = {
     isNormalUser = true;
     description = "Matheus";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers"];
   };
 
   # OBS: Removemos o bloco 'home-manager' daqui. 

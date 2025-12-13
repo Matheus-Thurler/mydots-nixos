@@ -14,5 +14,8 @@
     
     # Ferramentas
     hugo
+    python3
+    terraform
+    go
   ];
 }

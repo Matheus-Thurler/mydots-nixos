@@ -18,6 +18,14 @@
     ];
   };
 
+  # --- DOCKER ---
+  virtualisation.docker.enable = true;
+
+  # --- VIRTUALBOX (Backend para o Vagrant) ---
+  virtualisation.virtualbox.host.enable = true;
+  # Opcional: Habilita o Extension Pack (USB 2.0/3.0, etc) - exige licença proprietária
+  # virtualisation.virtualbox.host.enableExtensionPack = true;
+
   # 3. Lista Geral de Apps do Sistema
   environment.systemPackages = with pkgs; [
     # Criatividade / Trabalho
@@ -33,5 +41,8 @@
     wget
     curl
     nfs-utils
+    docker-compose
+    vagrant
+    ansible
   ];
 }
