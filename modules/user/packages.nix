@@ -19,5 +19,6 @@
     go
     spotify
     discord
+    handbrake # Conversor de Vídeo (Alternativa ao WinFF)
   ];
 }

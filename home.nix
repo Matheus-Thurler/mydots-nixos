@@ -5,13 +5,7 @@
   home.homeDirectory = "/home/matheus";
   home.stateVersion = "24.11"; 
 
-  home.pointerCursor = {
-    gtk.enable = true;
-    # x11.enable = true;
-    name = "Adwaita";
-    package = pkgs.adwaita-icon-theme;
-    size = 24;
-  }; 
+ 
 
   # Importando todos os módulos de usuário
   imports = [
@@ -27,5 +21,6 @@
     ./modules/user/wlogout
     ./modules/user/swaync
     ./modules/user/hyprlock
+    ./modules/user/theme.nix # GTK/QT Theming
   ];
 }

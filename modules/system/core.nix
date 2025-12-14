@@ -13,9 +13,23 @@
   networking.networkmanager.enable = true;
   services.rpcbind.enable = true; # Para NFS
 
+  # Funcionalidades do Thunar (GVFS + Thumbnails)
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
+
   # 1. Habilitar ZSH no sistema (obrigatório para ser shell padrão)
   programs.zsh.enable = true;
+  programs.dconf.enable = true; # Fix GTK Themes
   users.users.matheus.shell = pkgs.zsh;
+
+  # Drivers e Módulos do Kernel
+  boot.kernelModules = [ "i2c-dev" ]; 
+  
+  # Logitech Support (Solaar)
+  hardware.logitech.wireless.enable = true;
+  hardware.logitech.wireless.enableGraphical = true; # Adds Solaar installed
+
+  # Enable I2C for DDC (Monitor Brightness)
 
   # 2. Instalar Fontes para o Powerlevel10k e Ícones
   fonts.packages = with pkgs; [
@@ -49,6 +63,13 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
+  # Mount NFS (Exemplo)
+  fileSystems."/home/matheus/NasWork" = { 
+    device = "192.168.68.103:/mnt/NFS_HOUSE/work";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600" ];
+  };
+  
   # Permitir software proprietário
   nixpkgs.config.allowUnfree = true;
 

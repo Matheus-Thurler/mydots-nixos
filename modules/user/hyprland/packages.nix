@@ -18,6 +18,7 @@
     pavucontrol
     wlogout
     pulseaudio
+    pamixer       # CLI Audio Control
     brightnessctl # Controle de brilho (Software/Laptop)
     ddcutil       # Controle de brilho (Monitor Externo)
     
