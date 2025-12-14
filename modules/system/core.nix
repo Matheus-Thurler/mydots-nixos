@@ -49,6 +49,13 @@
     LC_TIME = "pt_BR.UTF-8";
   };
 
+  users.users.matheus = {
+    isNormalUser = true;
+    description = "matheus";
+    extraGroups = [ "networkmanager" "wheel" "input" "i2c" "video" ]; # video for brightnessctl
+    shell = pkgs.zsh;
+  };
+  
   # Mount NFS (Exemplo)
   fileSystems."/home/matheus/NasWork" = { 
     device = "192.168.68.103:/mnt/NFS_HOUSE/work";
@@ -58,6 +65,13 @@
   
   # Permitir software proprietário
   nixpkgs.config.allowUnfree = true;
+  
+  # Drivers e Módulos do Kernel
+  boot.kernelModules = [ "i2c-dev" "ddcci_backlight" ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.ddcci-driver ];
+
+  # Enable I2C for DDC (Monitor Brightness)
+  hardware.i2c.enable = true;
 
   # 1. Configuração do Garbage Collector (Limpeza de Disco)
   nix.gc = {

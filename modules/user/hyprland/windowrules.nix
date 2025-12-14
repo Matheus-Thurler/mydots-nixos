@@ -3,11 +3,20 @@
 {
   wayland.windowManager.hyprland.settings = {
     windowrulev2 = [
-      # Regras para o Terminal Quake (Drop-down)
-      "float, class:^(kitty-dropterm)$"
-      "size 70% 50%, class:^(kitty-dropterm)$"
-      "move 15% 0, class:^(kitty-dropterm)$"
-      "workspace special:magicterm, class:^(kitty-dropterm)$"
+      
+      # Pavucontrol - Float e Centralizado
+      "float, class:(pavucontrol)"
+      "size 800 600, class:(pavucontrol)"
+      "center, class:(pavucontrol)"
+
+      # Calendar (gsimplecal) - Float e Topo Central (Abaixo do relógio)
+      "float, class:(gsimplecal)"
+      "pin, class:(gsimplecal)"
+      "move 44% 45, class:(gsimplecal)"
+
+      # Picture-in-Picture
+      "float, title:^(Picture-in-Picture)$"
+      "pin, title:^(Picture-in-Picture)$"
     ];
   };
 }

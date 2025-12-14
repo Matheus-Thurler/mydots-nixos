@@ -9,6 +9,7 @@
     ./windowrules.nix
     ./packages.nix
     ./scripts.nix
+    ./workspaces.nix # Disabled for stability test -> Re-enabled
   ];
 
   wayland.windowManager.hyprland = {
@@ -20,8 +21,8 @@
         gaps_in = 5;
         gaps_out = 10;
         border_size = 2;
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
+        "col.active_border" = "rgba(1a1b26ff) rgba(c0caf5ff) 45deg";
+        "col.inactive_border" = "rgba(565f89cc)";
         layout = "dwindle";
       };
 

@@ -12,8 +12,8 @@
       # DP-1 (Principal, Esquerda, 1080p @ 240Hz)
       "DP-1, 1920x1080@240, 0x0, 1"
 
-      # HDMI-A-1 (Direita, 1080p, evita pegar 75Hz low-res)
-      "HDMI-A-1, 1920x1080, 1920x0, 1"
+      # HDMI-A-1 (Direita, 1080p, Forçando 75Hz)
+      "HDMI-A-1, 1920x1080@75, 1920x0, 1"
 
       # Regra genérica (Volta para preferred para priorizar resolução em outros monitores)
       ", preferred, auto, 1"

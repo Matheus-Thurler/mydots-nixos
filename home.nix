@@ -21,5 +21,11 @@
     ./modules/user/shell.nix
     ./modules/user/vscode.nix
     ./modules/user/hyprland
+    # ./modules/user/quickshell # Deprecated
+    ./modules/user/waybar
+    ./modules/user/rofi
+    ./modules/user/wlogout
+    ./modules/user/swaync
+    ./modules/user/hyprlock
   ];
 }

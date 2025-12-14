@@ -9,8 +9,27 @@
 
     # Hyprland Essentials
     waybar
-    dunst
+    swww
     swww
     networkmanagerapplet
+    pavucontrol
+    swww
+    networkmanagerapplet
+    pavucontrol
+    wlogout
+    pulseaudio
+    brightnessctl # Controle de brilho (Software/Laptop)
+    ddcutil       # Controle de brilho (Monitor Externo)
+    
+    # Waybar Addons
+    blueman
+    playerctl
+    gsimplecal
+    libnotify # Notificações via script
+
+    # Screenshot
+    grim
+    slurp
+    wl-clipboard
   ];
 }

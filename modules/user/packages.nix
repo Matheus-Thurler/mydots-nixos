@@ -17,5 +17,7 @@
     python3
     terraform
     go
+    spotify
+    discord
   ];
 }

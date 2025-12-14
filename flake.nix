@@ -5,9 +5,11 @@
     # Fonte do NixOS (Unstable, pois você usa stateVersion 25.11)
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    # Fonte do Home Manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs"; # Usa o mesmo nixpkgs do sistema
+    
+    # Quickshell
+    quickshell.url = "github:outfoxxed/quickshell";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
@@ -25,6 +27,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
             home-manager.users.matheus = import ./home.nix;
             
             # Passa argumentos para o home.nix caso precise
