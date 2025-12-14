@@ -12,29 +12,39 @@
     quickshell.url = "github:outfoxxed/quickshell";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations = {
-      # O NOME AQUI DEVE SER O MESMO DO SEU HOSTNAME (nixos)
-      nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; }; # Passa os inputs para dentro dos módulos
-        modules = [
-          # Importa seu arquivo de configuração antigo
-          ./configuration.nix
-
-          # Importa o módulo do Home Manager via Flake
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-            home-manager.users.matheus = import ./home.nix;
-            
-            # Passa argumentos para o home.nix caso precise
-            home-manager.extraSpecialArgs = { inherit inputs; };
-          }
-        ];
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+    let
+      vars = import ./variables.nix;
+    in
+    {
+      nixosConfigurations = {
+        # O NOME AQUI DEVE SER O MESMO DO SEU HOSTNAME (nixos)
+        "${vars.hostName}" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs;
+            inherit vars; # Passa as variaveis para todos os modulos do sistema
+          };
+          modules = [
+            # Importa seu arquivo de configuração antigo
+            ./configuration.nix
+  
+            # Importa o módulo do Home Manager via Flake
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.users."${vars.username}" = import ./home.nix;
+              
+              # Passa argumentos para o home.nix caso precise
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+                inherit vars; # Passa as variaveis para o Home Manager
+              };
+            }
+          ];
+        };
       };
     };
-  };
 }

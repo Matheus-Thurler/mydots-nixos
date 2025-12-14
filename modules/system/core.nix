@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, vars, ... }:
 
 {
   # Bootloader
@@ -9,7 +9,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Rede
-  networking.hostName = "nixos"; 
+  networking.hostName = "${vars.hostName}"; 
   networking.networkmanager.enable = true;
   services.rpcbind.enable = true; # Para NFS
 
@@ -20,7 +20,7 @@
   # 1. Habilitar ZSH no sistema (obrigatório para ser shell padrão)
   programs.zsh.enable = true;
   programs.dconf.enable = true; # Fix GTK Themes
-  users.users.matheus.shell = pkgs.zsh;
+  users.users.${vars.username}.shell = pkgs.zsh;
 
   # Drivers e Módulos do Kernel
   boot.kernelModules = [ "i2c-dev" ]; 

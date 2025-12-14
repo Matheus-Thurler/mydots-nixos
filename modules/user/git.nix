@@ -1,4 +1,4 @@
-{ ... }:
+{ vars, ... }:
 
 {
   programs.git = {
@@ -7,8 +7,8 @@
     # Using the new settings option directly:
     settings = {
       user = {
-        name = "Matheus Thurler";
-        email = "contato@matheusthurler.com.br";
+        name = "${vars.gitUsername}";
+        email = "${vars.gitEmail}";
       };
     };
   };

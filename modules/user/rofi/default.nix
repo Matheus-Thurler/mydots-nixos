@@ -4,6 +4,12 @@
   programs.rofi = {
     enable = true;
     theme = ./theme.rasi;
-    font = "JetBrainsMono Nerd Font 14";
+    font = "FiraCode Nerd Font 14";
+    
+    extraConfig = {
+      show-icons = true;
+      display-drun = " ";
+      drun-display-format = "{name}";
+    };
   };
 }

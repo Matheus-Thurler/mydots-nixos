@@ -40,7 +40,7 @@
     };
 
     # (Mantenha o bloco initExtra igual estava...)
-    initExtra = ''
+    initContent = ''
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
       export KUBE_EDITOR="nano"
       export PATH="$PATH:$(go env GOPATH)/bin"
