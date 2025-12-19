@@ -29,6 +29,11 @@
   hardware.logitech.wireless.enable = true;
   hardware.logitech.wireless.enableGraphical = true; # Adds Solaar installed
 
+  # Bluetooth Support
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
+
   # Enable I2C for DDC (Monitor Brightness)
 
   # 2. Instalar Fontes para o Powerlevel10k e Ícones
@@ -40,6 +45,8 @@
     nerd-fonts.hack
     nerd-fonts.droid-sans-mono
     nerd-fonts.symbols-only
+    nerd-fonts.ubuntu
+    nerd-fonts.ubuntu-mono
 
     # Ícones e Emojis
     font-awesome

@@ -1,5 +1,5 @@
 # modules/system/apps.nix
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   # 1. Navegadores
@@ -30,7 +30,7 @@
   environment.systemPackages = with pkgs; [
     # Criatividade / Trabalho
     davinci-resolve
-    antigravity # (Verifique se esse pacote existe mesmo, mantive do seu original)
+    inputs.antigravity-nix.packages.x86_64-linux.default # Google Antigravity IDE
     
     # Internet
     google-chrome
@@ -43,6 +43,6 @@
     nfs-utils
     docker-compose
     vagrant
-    ansible
+    p7zip
   ];
 }

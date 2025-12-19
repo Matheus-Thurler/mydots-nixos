@@ -6,7 +6,7 @@
       "waybar"
       "nm-applet --indicator"
       "swaync"
-      "swww init" # Wallpaper Manager
+      "swww-daemon" # Wallpaper Manager
 
       # Example: Open browser or terminal always
       # "[workspace 1 silent] kitty"

@@ -8,6 +8,12 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs"; # Usa o mesmo nixpkgs do sistema
     
+    # Antigravity (Google AI IDE)
+    antigravity-nix = {
+      url = "github:jacopone/antigravity-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
     # Quickshell
     quickshell.url = "github:outfoxxed/quickshell";
   };

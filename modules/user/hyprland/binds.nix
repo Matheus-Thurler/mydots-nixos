@@ -16,6 +16,7 @@
       "$mod, RETURN, exec, kitty" # Standard Terminal
       "$mod, E, exec, thunar"
       "$mod, R, exec, rofi -show drun"
+      "$mod SHIFT, R, exec, hyprctl reload" # Force Reload Hyprland config
       
       # Help / Keybinds
       "$mod, I, exec, show-keybinds"
@@ -36,7 +37,7 @@
       "$mod SHIFT, S, exec, grim -g \"$(slurp)\" - | wl-copy"
       
       # Wallpaper Selector
-      "$mod SHIFT, W, exec, wallpaper-selector"
+      "$mod SHIFT, W, exec, waypaper"
 
       # Lock Screen
       "$mod, L, exec, hyprlock"

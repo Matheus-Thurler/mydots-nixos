@@ -22,7 +22,7 @@
     };
 
     font = {
-      name = "FiraCode Nerd Font";
+      name = "Ubuntu Nerd Font";
       size = 11;
     };
   };

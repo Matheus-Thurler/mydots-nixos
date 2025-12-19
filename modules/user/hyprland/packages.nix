@@ -10,10 +10,7 @@
     # Hyprland Essentials
     waybar
     swww
-    swww
-    networkmanagerapplet
-    pavucontrol
-    swww
+    waypaper # GUI Wallpaper Manager with Preview
     networkmanagerapplet
     pavucontrol
     wlogout

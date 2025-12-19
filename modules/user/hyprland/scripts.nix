@@ -20,25 +20,7 @@
       SUPER + I        Ver esta lista" | rofi -dmenu -i -p "Atalhos"
     '')
 
-    (writeShellScriptBin "wallpaper-selector" ''
-      # Directory containing wallpapers
-      WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
-
-      # Check if directory exists
-      if [ ! -d "$WALLPAPER_DIR" ]; then
-          notify-send "Error" "Wallpaper directory not found!"
-          exit 1
-      fi
-
-      # Select wallpaper using rofi
-      SELECTED=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" \) -printf "%f\n" | rofi -dmenu -p "Wallpaper" -i)
-
-      # Set wallpaper if selected
-      if [ -n "$SELECTED" ]; then
-          swww img "$WALLPAPER_DIR/$SELECTED" --transition-type grow --transition-pos 0.854,0.977 --transition-step 90
-          notify-send "Wallpaper" "Set to $SELECTED"
-      fi
-    '')
+    # (Wallpaper Selector removed in favor of Waypaper)
 
     (writeShellScriptBin "rofi-audio" ''
       # Select Audio Output (Human Readable)

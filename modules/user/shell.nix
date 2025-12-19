@@ -33,10 +33,14 @@
       k = "kubectl";
       ctx = "kubectx";
       ns = "kubens";
+      hugo = "/etc/profiles/per-user/matheus/bin/hugo";
       
       py = "nohup /home/matheus/.local/share/JetBrains/Toolbox/apps/pycharm-professional/bin/pycharm.sh > /dev/null 2>&1 &";
       webcam = "nohup scrcpy --v4l2-sink=/dev/video4 --camera-size=3840x2160 --capture-orientation=180 --capture-orientation=flip180 --video-source=camera --no-playback > /dev/null 2>&1 &";
       killwebcam = "pkill -f 'scrcpy.*v4l2-sink'";
+      
+      # Fix DaVinci Resolve automatically
+      davinci-resolve = "davinci-wrapper";
     };
 
     # (Mantenha o bloco initExtra igual estava...)
@@ -44,21 +48,6 @@
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
       export KUBE_EDITOR="nano"
       export PATH="$PATH:$(go env GOPATH)/bin"
-      
-      hugo() {
-        hvm_show_status=true
-        if hugo_bin=$(hvm status --printExecPathCached 2>/dev/null); then
-          if [ "''${hvm_show_status}" = "true" ]; then
-            >&2 printf "Hugo version management is enabled in this directory.\\n"
-          fi
-        else
-          if ! hugo_bin=$(command -v hugo); then
-            >&2 printf "Command not found: hugo\\n"
-            return 1
-          fi
-        fi
-        "''${hugo_bin}" "$@"
-      }
     '';
   };
 }

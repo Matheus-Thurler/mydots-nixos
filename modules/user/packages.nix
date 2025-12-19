@@ -21,5 +21,10 @@
     discord
     handbrake # Conversor de Vídeo (Alternativa ao WinFF)
     steam
+    kind
+    tree
+    dnsutils
+    obsidian
+    p7zip
   ];
 }
