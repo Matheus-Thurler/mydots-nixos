@@ -5,5 +5,3 @@ result-*
 # Ignore automatically generated direnv output
 .direnv
 
-# Quickshell (Deprecated)
-modules/user/quickshell

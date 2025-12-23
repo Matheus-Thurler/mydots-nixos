@@ -15,6 +15,7 @@
     ],
     "modules-right": [
         "custom/notification",
+        "idle_inhibitor",
         "tray",
         "pulseaudio",
         "bluetooth",
@@ -137,5 +138,15 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "☕",
+            "deactivated": "⚪"
+        },
+        "tooltip": true,
+        "tooltip-format-activated": "Caffeine: ON (System will keep awake)",
+        "tooltip-format-deactivated": "Caffeine: OFF (System will sleep)"
     }
 }

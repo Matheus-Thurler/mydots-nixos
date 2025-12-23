@@ -29,5 +29,7 @@
     grim
     slurp
     wl-clipboard
+    pyprland
+    gnome-text-editor
   ];
 }

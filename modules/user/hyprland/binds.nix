@@ -34,7 +34,8 @@
       ", XF86AudioPrev, exec, playerctl previous"
 
       # Screenshot (Select region -> Clipboard)
-      "$mod SHIFT, S, exec, grim -g \"$(slurp)\" - | wl-copy"
+      # Rebound to PRINT key to free up S for scratchpad
+      ", Print, exec, grim -g \"$(slurp)\" - | wl-copy"
       
       # Wallpaper Selector
       "$mod SHIFT, W, exec, waypaper"
@@ -72,11 +73,17 @@
       "$mod SHIFT, 7, movetoworkspace, 7"
       "$mod SHIFT, 8, movetoworkspace, 8"
       "$mod SHIFT, 9, movetoworkspace, 9"
-      "$mod SHIFT, 0, movetoworkspace, 10"
+      "$mod SHIFT, 10, movetoworkspace, 10"
       
-      # Special Workspace (Scratchpad)
-      # "$mod, S, togglespecialworkspace, magic"
-      # "$mod SHIFT, S, movetoworkspace, special:magic"
+      # Special Workspace (Scratchpad) - NATIVE
+      "$mod, S, togglespecialworkspace, magic"
+      "$mod SHIFT, S, movetoworkspace, special:magic"
+
+      # Pyprland Scratchpad (Terminal Dropdown)
+      "$mod, Z, exec, pypr toggle term"
+      
+      # Pyprland Notes (Slide from Right)
+      "$mod, N, exec, pypr toggle notes"
       
       # Mouse Scroll Workspaces
       "$mod, mouse_down, workspace, e+1"

@@ -10,6 +10,7 @@
   # Desktop GNOME (Mantemos como backup/ambiente principal)
   # NOTA: Corrigi o caminho antigo que gerava warning (services.xserver.desktopManager...)
   services.desktopManager.gnome.enable = true;
+ 
 
   # --- 2. Hyprland (Habilitando no Sistema) ---
   programs.hyprland = {

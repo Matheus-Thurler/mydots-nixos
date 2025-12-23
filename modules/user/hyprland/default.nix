@@ -41,6 +41,10 @@
     };
   };
 
+  # Link Pyprland Config
+  # Link Pyprland Config (Hot Reload enabled)
+  xdg.configFile."hypr/pyprland.toml".source = config.lib.file.mkOutOfStoreSymlink "/home/matheus/mydots-nixos/modules/user/hyprland/pyprland.toml";
+
   # Portals (Obrigatório para OBS e Screenshare)
   xdg.portal = {
     enable = true;
