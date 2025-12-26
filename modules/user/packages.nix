@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -14,7 +14,7 @@
     
     # Ferramentas
     hugo
-    python3
+    # python3
     terraform
     go
     spotify
@@ -26,5 +26,6 @@
     dnsutils
     obsidian
     p7zip
+  
   ];
 }

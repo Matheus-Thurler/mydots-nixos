@@ -29,6 +29,7 @@
       # Assim o comando funciona mesmo se você estiver na pasta de Downloads ou /tmp
       rebuild = "sudo nixos-rebuild switch --flake /home/matheus/mydots-nixos#nixos --impure";
       update = "nix flake update --flake /home/matheus/mydots-nixos && sudo nixos-rebuild switch --flake /home/matheus/mydots-nixos#nixos --impure";
+      update-impure = "nix flake update --flake /home/matheus/mydots-nixos && sudo nixos-rebuild switch --flake /home/matheus/mydots-nixos#nixos --impure";
       
       k = "kubectl";
       ctx = "kubectx";

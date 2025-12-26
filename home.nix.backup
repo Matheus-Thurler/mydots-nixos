@@ -24,8 +24,11 @@
     ./modules/user/hypridle
     ./modules/user/terminal/kitty.nix
     ./modules/user/theme.nix # GTK/QT Theming
-    ./modules/user/caelestia # Caelestia Shell
   ];
 
+  # Caelestia shell
+  home.packages = [
+    inputs.caelestia-shell.packages.${pkgs.system}.default
+  ];
   # Override do Menu de Apps (Rofi) para usar nosso Wrapper do DaVinci
 }

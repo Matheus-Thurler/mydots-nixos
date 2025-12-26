@@ -16,6 +16,32 @@
     
     # Quickshell
     quickshell.url = "github:outfoxxed/quickshell";
+
+    # Astal
+    astal = {
+      url = "github:aylur/astal";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.astal.follows = "astal";
+    };
+
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    #colorshell = {
+    #  url = "path:./colorshell-temp";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
+    # colorshell = {
+    #   url = "github:retrozinndev/colorshell/ryo";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -48,6 +74,9 @@
                 inherit inputs;
                 inherit vars; # Passa as variaveis para o Home Manager
               };
+              home-manager.sharedModules = [
+                inputs.caelestia-shell.homeManagerModules.default
+              ];
             }
           ];
         };
