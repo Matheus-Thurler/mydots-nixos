@@ -33,6 +33,11 @@
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     #colorshell = {
     #  url = "path:./colorshell-temp";
@@ -63,6 +68,9 @@
   
             # Importa o módulo do Home Manager via Flake
             home-manager.nixosModules.home-manager
+            
+            # DMS nixosModule
+            inputs.dms.nixosModules.default
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;

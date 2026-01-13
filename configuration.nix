@@ -22,5 +22,20 @@
   # OBS: Removemos o bloco 'home-manager' daqui. 
   # Agora ele é configurado diretamente lá no arquivo flake.nix
 
+  # DankMaterialShell (disabled - using Caelestia)
+  programs.dms-shell = {
+    enable = true;
+    systemd = {
+      enable = false;  # Disabled - managed by restart-shell.sh
+      restartIfChanged = false;
+    };
+    enableSystemMonitoring = true;
+    enableClipboard = true;
+    enableVPN = false;
+    enableDynamicTheming = true;
+    enableAudioWavelength = true;
+    enableCalendarEvents = false;
+  };
+
   system.stateVersion = "25.11"; 
 }

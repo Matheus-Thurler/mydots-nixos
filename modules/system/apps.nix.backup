@@ -29,17 +29,7 @@
   # 3. Lista Geral de Apps do Sistema
   environment.systemPackages = with pkgs; [
     # Criatividade / Trabalho
-    (davinci-resolve.overrideAttrs (old: {
-      nativeBuildInputs = (old.nativeBuildInputs or []) ++ [ pkgs.makeWrapper ];
-      postFixup = (old.postFixup or "") + ''
-        wrapProgram $out/bin/davinci-resolve \
-          --set FONTCONFIG_FILE /etc/fonts/fonts.conf \
-          --prefix XDG_DATA_DIRS : "$HOME/.local/share:/run/current-system/sw/share" \
-          --set QT_QPA_PLATFORM xcb \
-          --unset QT_QPA_PLATFORMTHEME \
-          --unset QT_STYLE_OVERRIDE
-      '';
-    }))
+    davinci-resolve
     inputs.antigravity-nix.packages.x86_64-linux.default # Google Antigravity IDE
     
     # Internet
@@ -54,6 +44,5 @@
     docker-compose
     vagrant
     p7zip
-    ansible
   ];
 }

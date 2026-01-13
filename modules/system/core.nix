@@ -71,11 +71,11 @@
   };
 
   # Mount NFS (Exemplo)
-  fileSystems."/home/matheus/NasWork" = { 
-    device = "192.168.68.103:/mnt/NFS_HOUSE/work";
-    fsType = "nfs";
-    options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600" ];
-  };
+   fileSystems."/home/matheus/NasWork" = { 
+     device = "10.0.40.10:/mnt/NFS_HOUSE/work";
+     fsType = "nfs";
+     options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600" ];
+   };
   
   # Permitir software proprietário
   nixpkgs.config.allowUnfree = true;

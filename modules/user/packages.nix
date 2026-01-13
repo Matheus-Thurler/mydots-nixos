@@ -14,7 +14,7 @@
     
     # Ferramentas
     hugo
-    # python3
+    python3
     terraform
     go
     spotify
@@ -26,6 +26,10 @@
     dnsutils
     obsidian
     p7zip
-  
+    winbox
+    gns3-server
+    gns3-gui
+    bottles
+    anydesk
   ];
 }

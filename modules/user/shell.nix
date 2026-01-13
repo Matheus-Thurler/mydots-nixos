@@ -41,7 +41,7 @@
       killwebcam = "pkill -f 'scrcpy.*v4l2-sink'";
       
       # Fix DaVinci Resolve automatically
-      davinci-resolve = "davinci-wrapper";
+      # davinci-resolve = "davinci-wrapper";
     };
 
     # (Mantenha o bloco initExtra igual estava...)

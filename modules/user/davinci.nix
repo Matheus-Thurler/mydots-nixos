@@ -27,8 +27,14 @@ let
     unset QT_STYLE_OVERRIDE
     export QT_STYLE_OVERRIDE=""
     
+    # 5. FONT FIX
+    # Force visibility of system paths for fonts
+    export FONTCONFIG_FILE=/etc/fonts/fonts.conf
+    # Include user local share for fonts (e.g. Excalifont)
+    export XDG_DATA_DIRS="$HOME/.local/share:$XDG_DATA_DIRS:/usr/share:/run/current-system/sw/share"
+    
     # 5. Launch
-    exec davinci-resolve "$@"
+    exec ${pkgs.davinci-resolve}/bin/davinci-resolve "$@"
   '';
   # Desktop Entry (Robust Method)
   davinciDesktop = pkgs.makeDesktopItem {

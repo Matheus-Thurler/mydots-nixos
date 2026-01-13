@@ -14,7 +14,7 @@
     
     # ./modules/user/colorshell/default.nix
     ./modules/user/vscode.nix
-    ./modules/user/davinci.nix
+    # ./modules/user/davinci.nix
     ./modules/user/hyprland
     ./modules/user/waybar
     ./modules/user/rofi
@@ -25,6 +25,7 @@
     ./modules/user/terminal/kitty.nix
     ./modules/user/theme.nix # GTK/QT Theming
     ./modules/user/caelestia # Caelestia Shell
+    #./modules/user/dms # DMS is NixOS module, not Home Manager
   ];
 
   # Override do Menu de Apps (Rofi) para usar nosso Wrapper do DaVinci
