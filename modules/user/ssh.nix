@@ -26,10 +26,7 @@
     if [ -d "$HOME/.ssh" ]; then
       chmod 700 "$HOME/.ssh"
       
-      # Corrige permissões do arquivo config
-      if [ -f "$HOME/.ssh/config" ]; then
-        chmod 600 "$HOME/.ssh/config"
-      fi
+      # Nota: não modificamos o arquivo config pois é um symlink read-only gerenciado pelo Nix
       
       # Corrige permissões das chaves privadas do GitHub
       if [ -d "$HOME/.ssh/matheus" ]; then
