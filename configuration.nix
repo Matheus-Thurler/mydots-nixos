@@ -30,7 +30,7 @@
       restartIfChanged = false;
     };
     enableSystemMonitoring = true;
-    enableClipboard = true;
+    # `enableClipboard` foi removido upstream em DMS; não é mais necessário.
     enableVPN = false;
     enableDynamicTheming = true;
     enableAudioWavelength = true;
