@@ -19,7 +19,7 @@
     go
     spotify
     discord
-    handbrake # Conversor de Vídeo (Alternativa ao WinFF)
+    # handbrake # Conversor de Vídeo (Alternativa ao WinFF) - Desabilitado: ffmpeg-full-7.1.1 tem erro de build
     steam
     kind
     tree
