@@ -13,6 +13,12 @@
       url = "github:jacopone/antigravity-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # COSMIC Desktop
+    # nixos-cosmic = {
+    #   url = "github:lilyinstarlight/nixos-cosmic";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     
     # Quickshell
     quickshell.url = "github:outfoxxed/quickshell";
@@ -86,6 +92,9 @@
                 inputs.caelestia-shell.homeManagerModules.default
               ];
             }
+            
+            # COSMIC Desktop
+            # inputs.nixos-cosmic.nixosModules.default
           ];
         };
       };

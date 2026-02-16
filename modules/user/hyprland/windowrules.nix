@@ -2,21 +2,20 @@
 
 {
   wayland.windowManager.hyprland.settings = {
-    windowrulev2 = [
-      
+    windowrule = [
       # Pavucontrol - Float e Centralizado
-      "float, class:(pavucontrol)"
-      "size 800 600, class:(pavucontrol)"
-      "center, class:(pavucontrol)"
+      "match:class ^(pavucontrol)$, float 1"
+      "match:class ^(pavucontrol)$, size 800 600"
+      "match:class ^(pavucontrol)$, center 1"
 
       # Calendar (gsimplecal) - Float e Topo Central (Abaixo do relógio)
-      "float, class:(gsimplecal)"
-      "pin, class:(gsimplecal)"
-      "move 44% 45, class:(gsimplecal)"
+      "match:class ^(gsimplecal)$, float 1"
+      "match:class ^(gsimplecal)$, pin 1"
+      "match:class ^(gsimplecal)$, move 44% 45"
 
       # Picture-in-Picture
-      "float, title:^(Picture-in-Picture)$"
-      "pin, title:^(Picture-in-Picture)$"
+      "match:title ^(Picture-in-Picture)$, float 1"
+      "match:title ^(Picture-in-Picture)$, pin 1"
     ];
   };
 }

@@ -7,6 +7,11 @@
 
   # HABILITANDO FLAKES
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # nix.settings = {
+  #   experimental-features = [ "nix-command" "flakes" ];
+  #   substituters = [ "https://cosmic.cachix.org/" ];
+  #   trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjXPe96e9mMBdLxvl58AQA/CdLuyc=" ];
+  # };
 
   # Rede
   networking.hostName = "${vars.hostName}"; 

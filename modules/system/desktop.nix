@@ -6,10 +6,12 @@
 
   # Gerenciador de Login (GDM funciona bem com Hyprland e GNOME)
   services.displayManager.gdm.enable = true;
+  # services.displayManager.cosmic-greeter.enable = true;
   
   # Desktop GNOME (Mantemos como backup/ambiente principal)
   # NOTA: Corrigi o caminho antigo que gerava warning (services.xserver.desktopManager...)
   services.desktopManager.gnome.enable = true;
+  # services.desktopManager.cosmic.enable = true;
  
 
   # --- 2. Hyprland (Habilitando no Sistema) ---
