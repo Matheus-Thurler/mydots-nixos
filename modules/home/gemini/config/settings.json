@@ -1,0 +1,11 @@
+{
+  "general": {
+    "vimMode": false,
+    "defaultApprovalMode": "default"
+  },
+  "ui": {
+    "theme": "GitHub",
+    "hideBanner": false,
+    "inlineThinkingMode": "full"
+  }
+}

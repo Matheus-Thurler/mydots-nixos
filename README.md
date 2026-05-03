@@ -1,79 +1,66 @@
-# MyDots NixOS ❄️
+# 🚀 NixOS Modern Dots (Noctalia v4 + Illogical Style)
 
-A modern, aesthetic, and functional **Hyprland** configuration for **NixOS**.
-Featuring a consistent **Tokyo Night** theme across all components, advanced workflow scripts, and a robust "infrastructure-as-code" setup using Home Manager and Flakes.
+Este repositório contém minha configuração pessoal do NixOS, utilizando Flakes e Home Manager para um ambiente moderno, produtivo e esteticamente agradável.
 
-![Screenshot](https://github.com/user-attachments/assets/placeholder.png)
+## 🛠️ O que há de novo?
 
-## ✨ Features
+- **Noctalia Shell v4**: Interface moderna rodando sobre o **Hyprland**.
+- **Illogical Style**: Terminal Kitty e Shell Fish customizados com efeitos visuais (cursor trail) e prompt Starship estilizado.
+- **Modularização Total**: Configurações divididas em módulos reaproveitáveis (`gemini`, `ssh`, `terminal`, `shell`, etc).
+- **Docker Ready**: Docker habilitado por padrão com usuário no grupo correto.
+- **Fontes**: JetBrainsMono Nerd Font instalada para suporte a ícones.
 
-*   **Window Manager**: [Hyprland](https://hyprland.org) (Dwindle Layout)
-*   **Bar**: [Waybar](https://github.com/Alexays/Waybar) with custom "Tokyo Night" styling and interactive modules.
-*   **Notifications**: [SwayNotificationCenter (SwayNC)](https://github.com/ErikReider/SwayNotificationCenter) with History and DND support.
-*   **Launcher**: [Rofi](https://github.com/davatorium/rofi) (Wayland fork) with custom scripts for Audio and Bluetooth.
-*   **Lock Screen**: [Hyprlock](https://github.com/hyprwm/hyprlock) with blurred screenshot background.
-*   **Power Menu**: [Wlogout](https://github.com/ArtsyMacaw/wlogout).
-*   **Theme**: Tokyo Night (Global GTK, Icons, Kitty, Rofi, Waybar, Dunst/SwayNC).
+---
 
-## 🚀 Installation (Fresh Install)
+## 💻 Como instalar em um novo PC
 
-To apply this configuration on a fresh NixOS installation:
+Se você estiver formatando ou instalando em outra máquina, siga estes passos:
 
-1.  **Enable Flakes**:
-    Ensure your current `/etc/nixos/configuration.nix` has `nix.settings.experimental-features = [ "nix-command" "flakes" ];`.
+### 1. Preparação
+Certifique-se de que o NixOS está instalado com suporte a Flakes.
 
-2.  **Clone the Repository**:
-    ```bash
-    git clone https://github.com/yourusername/mydots-nixos.git ~/mydots-nixos
-    cd ~/mydots-nixos
-    ```
+### 2. Clonar o Repositório
+```bash
+git clone git@github.com:seu-usuario/mydots-nixos.git ~/mydots-nixos
+cd ~/mydots-nixos
+```
 
-3.  **Apply Configuration**:
-    ```bash
-    # For a fresh install (replacing hardware-configuration.nix if needed)
-    sudo nixos-rebuild switch --flake .
-    ```
+### 3. Gerar Chave SSH (Se necessário)
+Se não tiver uma chave no PC novo:
+```bash
+ssh-keygen -t ed25519 -C "matheusthurler@gmail.com"
+# Adicione a chave pública (~/.ssh/id_ed25519.pub) ao GitHub
+```
 
-4.  **Reboot**:
-    Reboot to log into your new Hyprland session.
+### 4. Aplicar a Configuração
+Como este repositório usa Flakes e caminhos específicos:
+```bash
+sudo nixos-rebuild switch --flake . --impure
+```
 
-## ⌨️ Keybindings
+### 5. Finalizar a Sessão
+Como o shell padrão e os grupos de usuário mudam, faça **Logout e Login**.
 
-| Key Combination | Action |
-| :--- | :--- |
-| `Super + Enter` | Open Terminal (Kitty) |
-| `Super + Q` | Close Window |
-| `Super + R` | Application Launcher (Rofi) |
-| `Super + E` | File Manager (Thunar) |
-| `Super + \` | Toggle Quake/Dropdown Terminal |
-| `Super + F` | Toggle Fullscreen |
-| `Super + V` | Toggle Floating |
-| `Super + L` | Lock Screen |
-| `Super + Shift + S` | Screenshot (Region -> Clipboard) |
-| `Super + Shift + W` | Wallpaper Selector |
-| `Super + [1-9]` | Switch Workspace |
-| `Super + Shift + [1-9]` | Move Window to Workspace |
+---
 
-## 🛠️ Custom Scripts
+## 📂 Estrutura de Módulos
 
-This config includes custom scripts integrated into the environment:
+- `modules/home/gemini/`: Configurações do Gemini CLI (edite em `./config/`).
+- `modules/home/terminal/`: Configuração do Kitty com efeito de rastro.
+- `modules/home/shell/`: Fish + Starship (estilo Illogical).
+- `modules/home/ssh/`: Gerenciamento de identidades SSH.
+- `modules/nixos/nvidia/`: Drivers e tweaks para NVIDIA.
 
-*   **Audio Selector**: Click the Volume icon in Waybar or run `rofi-audio`.
-*   **Bluetooth Menu**: Click the Bluetooth icon in Waybar or run `rofi-bluetooth`.
-*   **Wallpaper Picker**: Press `Super+Shift+W` to select a wallpaper from `~/Pictures/Wallpapers`.
+## 🤖 Gemini CLI & Skills
 
-## 📂 Structure
+As instruções e regras do Gemini CLI agora estão centralizadas em `modules/home/gemini/config/`.
+- Edite `GEMINI.md` para instruções globais.
+- Adicione novas skills em `skills/` criando uma subpasta com um `SKILL.md`.
 
-*   `flake.nix`: Entry point.
-*   `home.nix`: Home Manager configuration (User packages, visual settings).
-*   `modules/user/`: Modularized configurations.
-    *   `hyprland/`: Main WM config (binds, rules, execs).
-    *   `waybar/`: Status bar config and styling.
-    *   `swaync/`: Notification center.
-    *   `rofi/`: Menus and scripts.
-    *   `hyprlock/`: Lock screen.
+---
 
-## 📝 License
+## ⌨️ Atalhos Úteis no Terminal
 
-MIT
-s
+- `rebuild`: Atalho para o comando `nixos-rebuild switch`.
+- `ls`, `ll`, `la`: Listagem de arquivos com ícones (via `eza`).
+- `clear`: Limpa o terminal e o buffer de scrollback.

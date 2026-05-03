@@ -1,0 +1,12 @@
+# Regras de segurança e automação do Gemini CLI
+
+[[rule]]
+toolName = "run_shell_command"
+commandPrefix = "rm -rf"
+decision = "deny"
+priority = 100
+
+[[rule]]
+toolName = ["write_file", "replace"]
+decision = "ask_user"
+priority = 50
