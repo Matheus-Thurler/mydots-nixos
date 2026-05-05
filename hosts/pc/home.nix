@@ -16,6 +16,7 @@
     ../../modules/home/git
     ../../modules/home/neovim
     ../../modules/home/tmux
+    ../../modules/home/npm
   ];
 
   programs.home-manager.enable = true;

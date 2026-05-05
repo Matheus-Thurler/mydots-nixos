@@ -5,7 +5,8 @@ result-*
 
 # Gemini CLI
 modules/home/gemini/config/extensions/*
-!modules/home/gemini/config/extensions/.gitignore
+!modules/home/gemini/config/extensions/extension-enablement.json
+!modules/home/gemini/config/extensions/extension_integrity.json
 modules/home/gemini/config/state.json
 modules/home/gemini/config/history/
 modules/home/gemini/config/tmp/

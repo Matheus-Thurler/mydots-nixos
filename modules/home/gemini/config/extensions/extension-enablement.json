@@ -1,0 +1,12 @@
+{
+  "caveman": {
+    "overrides": [
+      "/home/matheus/*"
+    ]
+  },
+  "oh-my-gemini": {
+    "overrides": [
+      "/home/matheus/*"
+    ]
+  }
+}
