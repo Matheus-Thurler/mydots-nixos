@@ -19,10 +19,23 @@
       # Instala Oh-My-Gemini se não existir
       if [ ! -d "$HOME/.gemini/extensions/oh-my-gemini" ]; then
         echo "Installing Gemini oh-my-gemini extension..."
-        gemini extensions install https://github.com/r3dlex/oh-my-gemini --consent --skip-settings || true
+        gemini extensions install https://github.com/r3dlex/oh-my-gemini --non-interactive || true
+      fi
+
+      # Garante o link simbólico do binário oh-my-gemini no PATH
+      OMG_BIN_DIR="$HOME/.npm-global/bin"
+      OMG_SOURCE="$HOME/.gemini/extensions/oh-my-gemini/dist/cli/index.js"
+
+      if [ -f "$OMG_SOURCE" ]; then
+        mkdir -p "$OMG_BIN_DIR"
+        chmod +x "$OMG_SOURCE"
+        ln -sf "$OMG_SOURCE" "$OMG_BIN_DIR/oh-my-gemini"
+        ln -sf "$OMG_SOURCE" "$OMG_BIN_DIR/omg"
+        echo "Linked oh-my-gemini binaries to $OMG_BIN_DIR"
       fi
     fi
   '';
+
 
   /* 
      Nota DevOps: 
