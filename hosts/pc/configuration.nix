@@ -13,7 +13,7 @@
   boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "pc"; # Hostname para o PC Desktop
+  networking.hostName = "nixos-pc"; # Hostname para o PC Desktop
 
   # Garbage Collector e Otimização
   nix.gc = {
@@ -55,12 +55,12 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "br";
-    variant = "";
+    layout = "us";
+    variant = "intl";
   };
 
   # Configure console keymap
-  console.keyMap = "br-abnt2";
+  console.keyMap = "us-intl";
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;

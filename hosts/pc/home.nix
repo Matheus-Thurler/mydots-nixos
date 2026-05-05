@@ -19,4 +19,10 @@
   ];
 
   programs.home-manager.enable = true;
+
+  # Configuração de Teclado específica para o PC (US International)
+  wayland.windowManager.hyprland.settings.input = {
+    kb_layout = "us";
+    kb_variant = "intl";
+  };
 }

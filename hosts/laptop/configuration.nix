@@ -13,7 +13,7 @@
   boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "laptop"; # Alterado de nixos para laptop
+  networking.hostName = "nixos-laptop"; # Alterado de laptop para nixos-laptop
 
   fileSystems."/home/matheus/NasWork" = { 
      device = "10.0.40.10:/mnt/NFS_HOUSE/work";

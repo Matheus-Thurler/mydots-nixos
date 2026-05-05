@@ -9,7 +9,7 @@
 
       # Teclado Global
       input = {
-        kb_layout = "br";
+        kb_layout = lib.mkDefault "br";
         follow_mouse = 1;
         touchpad = {
           natural_scroll = true;

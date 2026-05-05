@@ -43,10 +43,8 @@
     };
   in {
     nixosConfigurations = {
-      laptop = mkHost "laptop";
-      pc     = mkHost "pc";
-      # Mantendo nixos como alias para laptop por compatibilidade inicial
-      nixos  = self.nixosConfigurations.laptop;
+      nixos-laptop = mkHost "laptop";
+      nixos-pc     = mkHost "pc";
     };
   };
 }
