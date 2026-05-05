@@ -12,6 +12,7 @@
     thunar
     vlc
     localsend
+    bitwarden-desktop
     
     # CLI Tools
     json-diff 

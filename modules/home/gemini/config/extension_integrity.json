@@ -1,13 +1,9 @@
 {
   "store": {
-    "caveman": {
-      "hash": "599d92470f4fba11ca0fd7b3e5fbd070d3abc3e6690ae8c316315f4909b3d1db",
-      "signature": "d608c66359c49caccdce03e50a057c18c80f688d636b2c5fc678e78325083445"
-    },
     "oh-my-gemini": {
       "hash": "223d1215cc1246ea87c37c36f4da28715601e91adaa7e72af1daf53bd8425cfc",
-      "signature": "b46a49259f5d4721d0f812dc43f9287ff8912d3ab368b3c02680551e9ebaf3b3"
+      "signature": "2bcb5398704660f892098ed4af459222899a8639fece955ae1d15e89a6e31be7"
     }
   },
-  "signature": "1d007f974852a79cf62e30fbb0d59d7b1ae4822090aa3a9fd4fbbd261af2a989"
+  "signature": "7e958b267aa423e4ea91f97de3cc0ada407c9d9cfa71ae2b0ad7459a647a515a"
 }

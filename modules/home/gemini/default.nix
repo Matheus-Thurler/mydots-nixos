@@ -13,13 +13,13 @@
       # Instala Caveman se não existir
       if [ ! -d "$HOME/.gemini/extensions/caveman" ]; then
         echo "Installing Gemini caveman extension..."
-        gemini extensions install https://github.com/JuliusBrussee/caveman --non-interactive || true
+        gemini extensions install https://github.com/JuliusBrussee/caveman --consent --skip-settings || true
       fi
       
       # Instala Oh-My-Gemini se não existir
       if [ ! -d "$HOME/.gemini/extensions/oh-my-gemini" ]; then
         echo "Installing Gemini oh-my-gemini extension..."
-        gemini extensions install https://github.com/r3dlex/oh-my-gemini --non-interactive || true
+        gemini extensions install https://github.com/r3dlex/oh-my-gemini --consent --skip-settings || true
       fi
     fi
   '';
