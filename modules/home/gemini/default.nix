@@ -16,6 +16,13 @@
         gemini extensions install https://github.com/JuliusBrussee/caveman --consent --skip-settings || true
       fi
       
+      # FIX: Remove invalid YAML-like frontmatter (---) from caveman-init.toml that breaks TOML parsing
+      CAVEMAN_INIT="$HOME/.gemini/extensions/caveman/commands/caveman-init.toml"
+      if grep -q "^---$" "$CAVEMAN_INIT" 2>/dev/null; then
+        sed -i '/^---$/d' "$CAVEMAN_INIT"
+        echo "Patched caveman-init.toml to remove invalid TOML frontmatter."
+      fi
+      
       # Instala Oh-My-Gemini se não existir
       if [ ! -d "$HOME/.gemini/extensions/oh-my-gemini" ]; then
         echo "Installing Gemini oh-my-gemini extension..."
