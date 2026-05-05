@@ -27,6 +27,11 @@
       if [ ! -d "$HOME/.gemini/extensions/oh-my-gemini" ]; then
         echo "Installing Gemini oh-my-gemini extension..."
         gemini extensions install https://github.com/r3dlex/oh-my-gemini --non-interactive || true
+        # Como a extensão é em TypeScript, precisamos compilar para o binário existir
+        if [ -d "$HOME/.gemini/extensions/oh-my-gemini" ]; then
+          echo "Building oh-my-gemini..."
+          (cd "$HOME/.gemini/extensions/oh-my-gemini" && npm install && npm run build)
+        fi
       fi
 
       # Garante o link simbólico do binário oh-my-gemini no PATH
