@@ -57,6 +57,25 @@ As instruções e regras do Gemini CLI agora estão centralizadas em `modules/ho
 - Edite `GEMINI.md` para instruções globais.
 - Adicione novas skills em `skills/` criando uma subpasta com um `SKILL.md`.
 
+### 🔌 Gerenciando Extensões Gemini
+
+Para instalar novas extensões (como `oh-my-gemini` ou `caveman`) sem que elas poluam o Git do seu repositório:
+
+1.  **Instale a extensão:**
+    ```bash
+    gemini extensions install <URL-DO-GITHUB>
+    ```
+2.  **Extensões Complexas (Node.js/Build):**
+    Se a extensão precisar de build (como o `oh-my-gemini`):
+    ```bash
+    cd ~/.gemini/extensions/<nome-da-extensao>
+    npm install && npm run build
+    # Opcional: Linkar o binário se ela tiver CLI próprio
+    ln -sf $(pwd)/dist/cli/index.js ~/.npm-global/bin/<comando>
+    ```
+3.  **Não Commite:**
+    O arquivo `.gitignore` já está configurado para ignorar a pasta `extensions/` e arquivos de credenciais/estado.
+
 ---
 
 ## ⌨️ Atalhos Úteis no Terminal

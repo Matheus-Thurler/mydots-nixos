@@ -1,5 +1,5 @@
 {
-  description = "Flake de configuração do NixOS - Matheus (Noctalia v4)";
+  description = "Flake de configuração do NixOS - Matheus (Multi-host)";
 
   nixConfig = {
     extra-substituters = [ "https://noctalia.cachix.org" ];
@@ -20,24 +20,33 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, noctalia, ... }@inputs: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, home-manager, noctalia, ... }@inputs: 
+  let
+    # Função auxiliar para criar configurações do sistema
+    mkHost = hostName: nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
-        ./configuration.nix
+        ./hosts/${hostName}/configuration.nix
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
-          home-manager.users.matheus = import ./home.nix;
+          home-manager.users.matheus = import ./hosts/${hostName}/home.nix;
           home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.sharedModules = [
             noctalia.homeModules.default
           ];
         }
       ];
+    };
+  in {
+    nixosConfigurations = {
+      laptop = mkHost "laptop";
+      pc     = mkHost "pc";
+      # Mantendo nixos como alias para laptop por compatibilidade inicial
+      nixos  = self.nixosConfigurations.laptop;
     };
   };
 }

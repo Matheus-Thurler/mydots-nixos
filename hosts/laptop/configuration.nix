@@ -1,23 +1,33 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      # Módulos customizados
-      ./modules/nixos/nvidia
+      # Módulos customizados (caminho ajustado para a nova estrutura)
+      ../../modules/nixos/nvidia
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.hostName = "laptop"; # Alterado de nixos para laptop
+
+  fileSystems."/home/matheus/NasWork" = { 
+     device = "10.0.40.10:/mnt/NFS_HOUSE/work";
+     fsType = "nfs";
+     options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600" ];
+   };
+
+  # Garbage Collector e Otimização
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+  nix.settings.auto-optimise-store = true;
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -93,13 +103,6 @@
     description = "Matheus Thurler";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.fish;
-    packages = with pkgs; [
-        git
-        curl
-        wget
-        google-chrome
-        vscode 
-    ];
   };
 
   # Install firefox.
@@ -108,12 +111,14 @@
   # Habilitar Fish no sistema (necessário para ser o shell padrão)
   programs.fish.enable = true;
 
+  # Habilitar dconf para configurações do Home Manager
+  programs.dconf.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-   nodejs_24
   ];
 
   # Fontes

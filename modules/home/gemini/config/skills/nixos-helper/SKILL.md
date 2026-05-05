@@ -1,3 +1,8 @@
+---
+name: nixos-helper
+description: Diretrizes especializadas para gerenciar a configuração NixOS (Noctalia v4). Use para lidar com módulos Nix, rebuilds do sistema e boas práticas de organização do repositório.
+---
+
 # Skill: NixOS Helper
 
 Esta skill fornece diretrizes especializadas para gerenciar esta configuração NixOS específica.
@@ -8,6 +13,7 @@ Esta skill fornece diretrizes especializadas para gerenciar esta configuração 
 - Prefira sempre a modularização: se uma configuração crescer demais, sugira criar um novo arquivo em `modules/`.
 - Após qualquer mudança em arquivos `.nix`, lembre o usuário de rodar o comando `rebuild`.
 - Mantenha os comentários em português, seguindo o padrão atual do repositório.
+- Analise a estrutura atual dos arquivos para garantir consistência com as práticas já estabelecidas.
 </instructions>
 
 <available_resources>

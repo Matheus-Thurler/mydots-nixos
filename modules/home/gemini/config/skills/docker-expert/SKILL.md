@@ -1,3 +1,8 @@
+---
+name: docker-expert
+description: Especialista em Docker e containerização. Use para criar Dockerfiles otimizados, multi-stage builds, imagens seguras e ambientes de container seguindo as melhores práticas.
+---
+
 # Skill: Docker Expert
 
 Esta skill fornece diretrizes para a criação de Dockerfiles e ambientes de container seguindo as melhores práticas de segurança, performance e manutenibilidade.

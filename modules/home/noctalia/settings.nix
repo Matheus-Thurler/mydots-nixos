@@ -28,18 +28,6 @@
             icon = "rocket";      # Fallback se o logo falhar
           }
           {
-            id = "Clock";
-            formatHorizontal = "HH:mm ddd, MMM dd";
-          }
-          {
-            id = "SystemMonitor";
-            compactMode = true;
-          }
-        ];
-
-        # CENTRO: Workspaces Monocromáticos
-        center = [
-          {
             id = "Workspace";
             rainbow = false;
             showLabels = true;
@@ -47,6 +35,21 @@
             occupiedColor = "secondary";
             emptyColor = "outline";
             pillSize = 0.6;
+          }
+          {
+            id = "SystemMonitor";
+            compactMode = true;
+          }
+          {
+            id = "MediaMini";
+          }
+        ];
+
+        # CENTRO: Workspaces Monocromáticos
+        center = [
+          {
+            id = "Clock";
+            formatHorizontal = "HH:mm ddd, MMM dd";
           }
         ];
 
@@ -59,7 +62,12 @@
             id = "Volume";
           }
           {
+            alwaysShowPercentage = true;
             id = "Battery";
+            warningThreshold = 30;
+          }
+          {
+            id = "Network";
           }
           {
             id = "ControlCenter";

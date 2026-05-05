@@ -7,5 +7,10 @@
     "theme": "GitHub",
     "hideBanner": false,
     "inlineThinkingMode": "full"
+  },
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
   }
 }

@@ -6,6 +6,9 @@
     interactiveShellInit = ''
       set fish_greeting
       
+      # Adicionar binários globais do NPM ao PATH
+      fish_add_path /home/matheus/.npm-global/bin
+
       # Starship Transience
       function starship_transient_prompt_func
         starship module character
@@ -17,17 +20,17 @@
       end
     '';
     shellAliases = {
-      ls = "eza --icons";
-      ll = "eza -l --icons";
-      la = "eza -la --icons";
       clear = "printf '\\033[2J\\033[3J\\033[1;1H'";
       celar = "printf '\\033[2J\\033[3J\\033[1;1H'";
       claer = "printf '\\033[2J\\033[3J\\033[1;1H'";
-      rebuild = "sudo nixos-rebuild switch --flake ~/mydtos-nixos --impure";
+      rebuild = "sudo nixos-rebuild switch --flake /home/matheus/mydots-nixos --impure";
     };
   };
 
-  home.packages = with pkgs; [
-    eza
-  ];
+  # Habilitar eza (modern ls) com integração automática de aliases
+  programs.eza = {
+    enable = true;
+    icons = "auto";
+    enableFishIntegration = true;
+  };
 }

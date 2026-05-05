@@ -1,0 +1,20 @@
+# Nix/NixOS
+result
+result-*
+.direnv/
+
+# Gemini CLI
+modules/home/gemini/config/extensions/*
+!modules/home/gemini/config/extensions/.gitignore
+modules/home/gemini/config/state.json
+modules/home/gemini/config/history/
+modules/home/gemini/config/tmp/
+modules/home/gemini/config/google_accounts.json
+modules/home/gemini/config/oauth_creds.json
+modules/home/gemini/config/gemini-credentials.json
+modules/home/gemini/config/installation_id
+
+# Oh-My-Gemini
+.omg/
+**/node_modules/
+**/dist/
