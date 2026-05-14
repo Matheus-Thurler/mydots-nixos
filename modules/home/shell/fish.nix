@@ -6,8 +6,7 @@
     interactiveShellInit = ''
       set fish_greeting
       
-      # Adicionar binários globais do NPM ao PATH
-      fish_add_path /home/matheus/.npm-global/bin
+      fish_add_path -a $HOME/.npm-global/bin
 
       # Starship Transience
       function starship_transient_prompt_func

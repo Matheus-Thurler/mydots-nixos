@@ -1,24 +1,25 @@
 { config, pkgs, ... }:
 
+let
+  npmDir = "${config.home.homeDirectory}/.npm-global";
+in
 {
-  # Configura o npm para usar uma pasta no diretório home para pacotes globais.
-  # Isso evita a necessidade de sudo para instalar pacotes npm globais.
-  
-  home.sessionPath = [
-    "/home/matheus/.npm-global/bin"
-  ];
+  home.sessionVariables = {
+    NPM_CONFIG_PREFIX = npmDir;
+  };
+
+  home.sessionPath = [ "${npmDir}/bin" ];
 
   home.file.".npmrc".text = ''
-    prefix = /home/matheus/.npm-global
+    prefix = ${npmDir}
   '';
 
-  # Garante que a pasta exista
   home.activation.createNpmGlobalDir = {
     after = [ "writeBoundary" ];
     before = [ ];
     data = ''
-      if [ ! -d "/home/matheus/.npm-global" ]; then
-        mkdir -p "/home/matheus/.npm-global"
+      if [ ! -d "${npmDir}" ]; then
+        mkdir -p "${npmDir}"
       fi
     '';
   };

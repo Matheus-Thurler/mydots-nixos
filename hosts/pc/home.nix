@@ -11,17 +11,17 @@
     ../../modules/home/packages
     ../../modules/home/shell
     ../../modules/home/ssh
-    ../../modules/home/gemini
     ../../modules/home/terminal
     ../../modules/home/git
     ../../modules/home/neovim
     ../../modules/home/tmux
     ../../modules/home/npm
+    ../../modules/home/claude
+    ../../modules/home/gemini
   ];
 
   programs.home-manager.enable = true;
 
-  # Configuração de Teclado específica para o PC (US International)
   wayland.windowManager.hyprland.settings.input = {
     kb_layout = "us";
     kb_variant = "intl";

@@ -42,7 +42,7 @@
       "SUPER, C, exec, dolphin"
       "SUPER, M, exit,"
       "SUPER, V, togglefloating,"
-      "SUPER, E, exec, dolphin"
+      "SUPER, E, exec, thunar"
 
       # Workspaces
       "SUPER, 1, workspace, 1"
