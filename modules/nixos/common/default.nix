@@ -19,7 +19,12 @@
   nix.settings.auto-optimise-store = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    plugins = [ pkgs.networkmanager-openvpn ];
+  };
+
+  environment.systemPackages = [ pkgs.networkmanagerapplet ];
 
   time.timeZone = "America/Sao_Paulo";
 

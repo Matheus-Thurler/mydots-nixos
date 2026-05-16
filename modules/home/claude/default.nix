@@ -12,6 +12,7 @@ in
 {
   home.packages = [
     pkgs.uv
+    pkgs.claude-code-acp
     claude-launcher
   ];
 }

@@ -12,11 +12,26 @@
       }
     ];
     states = {
-      # Adicione aqui os plugins que você baixar, exemplo:
-      # catwalk = {
-      #   enabled = true;
-      #   sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
-      # };
+      network-manager-vpn = {
+        enabled = true;
+        sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+      };
+      kubectl-ctx = {
+        enabled = true;
+        sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+      };
+      simple-notes = {
+        enabled = true;
+        sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+      };
+      claude-code-panel = {
+        enabled = true;
+        sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+      };
+      screen-toolkit = {
+        enabled = true;
+        sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+      };
     };
     version = 2;
   };

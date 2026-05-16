@@ -59,6 +59,18 @@
             id = "Tray";
           }
           {
+            id = "plugin:screen-toolkit";
+          }
+          {
+            id = "plugin:simple-notes";
+          }
+          {
+            id = "plugin:kubectl-ctx";
+          }
+          {
+            id = "plugin:claude-code-panel";
+          }
+          {
             id = "Volume";
           }
           {
@@ -68,6 +80,9 @@
           }
           {
             id = "Network";
+          }
+          {
+            id = "plugin:network-manager-vpn";
           }
           {
             id = "ControlCenter";

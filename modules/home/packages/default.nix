@@ -59,6 +59,8 @@ in
     wget
     cloudmonkey
     gnumake
+    termius
+    unzip
     # Kubernetes e Cloud
     kubectl
     kubectx

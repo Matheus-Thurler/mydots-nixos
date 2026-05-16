@@ -14,6 +14,9 @@
 
   networking.firewall.allowedTCPPorts = [
     6443   # k3s API server
+    8080   # CloudStack API (hostNetwork)
+    8250   # CloudStack Agent (hostNetwork)
+    9090   # CloudStack Cluster (hostNetwork)
     30080  # CloudStack UI/API (NodePort)
     30250  # CloudStack Agent comm (NodePort)
   ];
