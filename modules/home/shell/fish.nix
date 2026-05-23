@@ -5,8 +5,10 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting
-      
+
       fish_add_path -a $HOME/.npm-global/bin
+
+      set -gx ANTHROPIC_BASE_URL https://api.aibee.cloud
 
       # Starship Transience
       function starship_transient_prompt_func
@@ -22,6 +24,7 @@
       clear = "printf '\\033[2J\\033[3J\\033[1;1H'";
       celar = "printf '\\033[2J\\033[3J\\033[1;1H'";
       claer = "printf '\\033[2J\\033[3J\\033[1;1H'";
+      content-cli = "$HOME/Documents/Projects/pessoal/github/content-automation/cli/content-cli";
     };
     functions = {
       rebuild = {

@@ -6,6 +6,7 @@
     ../../modules/nixos/common
     ../../modules/nixos/nvidia
     ../../modules/nixos/k3s
+    ../../modules/nixos/localsend
   ];
 
   networking.hostName = "nixos-pc";

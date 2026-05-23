@@ -34,10 +34,11 @@ in
     vlc
     localsend
     bitwarden-desktop
-    antigravity
     playerctl
     winbox
     anki
+    btop
+    yq
     # CLI Tools
     json-diff 
     kitty     
@@ -47,7 +48,6 @@ in
     swappy      
     wl-clipboard
     htop
-    btop
     ripgrep
     jq
     fzf

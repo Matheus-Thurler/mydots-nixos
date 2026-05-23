@@ -18,6 +18,7 @@
     ../../modules/home/npm
     ../../modules/home/claude
     ../../modules/home/gemini
+    ../../modules/home/antigravity
   ];
 
   programs.home-manager.enable = true;
