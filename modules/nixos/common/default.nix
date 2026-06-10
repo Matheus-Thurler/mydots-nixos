@@ -75,6 +75,21 @@
   };
 
   programs.firefox.enable = true;
+  environment.sessionVariables = {
+    # Steam - Forçar Wayland para melhor compatibilidade NVIDIA
+    STEAM_RUNTIME = "1";
+    DISPLAY = ":0";
+  };
+
+  # Steam不准
+  programs.steam = {
+    enable = true;
+    remotePlay.enable = true;
+    # Suporte a jogos 32-bit (necessário para muitos games)
+    package = pkgs.steam.override {
+      extraLibraries = pkgs: [ pkgs.mesa.drivers ];
+    };
+  };
   programs.fish.enable = true;
   programs.dconf.enable = true;
   programs.nix-ld.enable = true;

@@ -4,8 +4,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      # Monitor e Escala
-      monitor = ",preferred,auto,1";
+      monitor = lib.mkDefault ",preferred,auto,1";
 
       # Teclado Global
       input = {

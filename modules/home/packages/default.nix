@@ -32,13 +32,17 @@ in
     obsidian
     thunar
     vlc
+    usbimager
     localsend
     bitwarden-desktop
+    nwg-displays
     playerctl
     winbox
     anki
     btop
     yq
+    telegram-desktop
+    openssl
     # CLI Tools
     json-diff 
     kitty     
