@@ -71,6 +71,7 @@ in
     kind
     google-cloud-sdk
     gh
+    mediawriter
     pavucontrol
     teams-for-linux
     # Desenvolvimento e Infra

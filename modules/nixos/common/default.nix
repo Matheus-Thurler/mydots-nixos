@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   boot.loader.systemd-boot.enable = true;
@@ -24,7 +24,16 @@
     plugins = [ pkgs.networkmanager-openvpn ];
   };
 
-  environment.systemPackages = [ pkgs.networkmanagerapplet ];
+  environment.systemPackages = with pkgs; [
+    pkgs.networkmanagerapplet
+    # Wrapper customizado para Steam com NVIDIA
+    (writeScriptBin "steam-nvidia" ''
+      #!/bin/sh
+      # Forçar X11 para o Steam (evita problemas de cursor com NVIDIA+Wayland)
+      unset WAYLAND_DISPLAY
+      GBM_BACKEND=nvidia __GLX_VENDOR_LIBRARY_NAME=nvidia steam "$@"
+    '')
+  ];
 
   time.timeZone = "America/Sao_Paulo";
 
@@ -75,26 +84,21 @@
   };
 
   programs.firefox.enable = true;
-  environment.sessionVariables = {
-    # Steam - Forçar Wayland para melhor compatibilidade NVIDIA
-    STEAM_RUNTIME = "1";
-    DISPLAY = ":0";
-  };
 
-  # Steam不准
+  # Steam - Configuração simples para NVIDIA
   programs.steam = {
     enable = true;
-    remotePlay.enable = true;
-    # Suporte a jogos 32-bit (necessário para muitos games)
-    package = pkgs.steam.override {
-      extraLibraries = pkgs: [ pkgs.mesa.drivers ];
-    };
   };
+
   programs.fish.enable = true;
   programs.dconf.enable = true;
   programs.nix-ld.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+
+  environment.etc."distrobox/distrobox.conf".text = ''
+    container_additional_volumes="/nix/store:/nix/store:ro /etc/profiles/per-user:/etc/profiles/per-user:ro /etc/static/profiles/per-user:/etc/static/profiles/per-user:ro"
+  '';
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
